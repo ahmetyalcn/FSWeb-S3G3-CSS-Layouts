@@ -1,11 +1,129 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Döküman</title>
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="shortcut icon" href="./assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Dosis&family=Silkscreen&display=swap"
+        rel="stylesheet">
+    <title>Develoqer</title>
 </head>
+
 <body>
-    
+    <div class="container">
+
+
+        <header>
+            <nav class="navbar">
+                <img src="assets/logo.png" alt="logo" class="logo">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-link">Projects</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="banner">
+                <div class="transparant">
+                    <div class="bannerText">
+                        <h1>I am Ahmet Necdet Yalçın</h1>
+                        <button onclick="window.location.href='projects.html'">
+                            <h2>Projects</h2>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+
+        <section>
+            <div class="boxes">
+                <div class="box">
+                    <div class="images"></div>
+                    <label>KUTU1</label>
+                </div>
+                <div class="box">
+                    <div class="images"></div>
+                    <label>KUTU2</label>
+                </div>
+                <div class="box">
+                    <div class="images"></div>
+                    <label>KUTU3</label>
+                </div>
+                <div class="box">
+                    <div class="images"></div>
+                    <label>KUTU4</label>
+                </div>
+                <div class="box">
+                    <div class="images"></div>
+                    <label>KUTU5</label>
+                </div>
+                <div class="box">
+                    <div class="images"></div>
+                    <label>KUTU6</label>
+                </div>
+
+            </div>
+        </section>
+        <footer>
+            <button onclick="window.location.href='contact.html'">
+                <h2>Bana ulaşın</h2>
+            </button>
+        </footer>
+    </div>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        let isSticky = false;
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const docHeight = document.documentElement.scrollHeight;
+            const winHeight = window.innerHeight;
+
+            if (!isSticky && scrollTop > (docHeight - winHeight) / 2) {
+                navbar.classList.add('sticky');
+                isSticky = true;
+            } else if (isSticky && scrollTop <= (docHeight - winHeight) / 2) {
+                navbar.classList.remove('sticky');
+                isSticky = false;
+            }
+        });
+
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        })
+        document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }))
+    </script>
 </body>
+
 </html>

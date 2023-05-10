@@ -1,1 +1,208 @@
-/* CSS stillerinizi buraya girin */
+*{
+    font-family: 'Dosis', sans-serif;
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    background-color: black;
+}
+header{
+    padding: 20px;
+}
+header nav{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+}
+
+.logo{
+    width: 200px;
+}
+nav ul a{
+    border-radius: 10px;
+    padding: 15px 20px;
+    border: 1px solid #3498DA;
+    margin-left: 10px;
+    color: #3498DA;
+    text-decoration: none;
+}
+nav ul li{
+    list-style-type: none;
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+
+  }
+  .nav-link{
+    transition: 0.3s ease-out;
+  }
+  .nav-link:hover{
+    color: dodgerblue;
+  }
+  .hamburger{
+    display: none;
+    cursor: pointer;
+  }
+  .bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: white;
+  }
+  @media(max-width:763px){
+    .hamburger{
+      display: block;
+    }
+   .hamburger.active .bar:nth-child(2){
+      opacity: 0;
+    }
+   .hamburger.active .bar:nth-child(1){
+      transform: translateY(8px) rotate(45deg);
+    }
+   .hamburger.active .bar:nth-child(3){
+      transform: translateY(-8px) rotate(-45deg);
+    }
+   .nav-menu{
+      position: fixed;
+      left: -100%;
+      top: 70px;
+      flex-direction: column;
+      background-color: #070606c4;
+      text-align: center;
+      transition: 0.3s;
+      z-index: 999;
+    }
+   .nav-item{
+      margin: 16px 0;
+    }
+   .nav-menu.active{
+     left: 0;
+      width: 100%;
+    padding: 0;
+    }
+    .nav-menu.active li a{
+        border: none;
+        font-size: 20px;
+
+    }
+  }
+  
+  .navbar.sticky {
+    position: fixed;
+    height: 100px;
+    background-color: black;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 20px;
+    z-index: 9999;
+
+  transition: all 0.3s ease-in-out;
+  }
+.container{
+    background-image: url(../assets/hero-bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+.banner {
+    width: 80%;
+    margin: 30px auto;
+    height: 60vh;
+  }
+  
+  .transparant {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(126, 124, 124, 0.734);
+  }
+  
+  .bannerText {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    /* diğer stil özellikleri */
+  }
+main .bannerText h1{
+    color: white;
+    font-size: 40px;
+ 
+}
+main .bannerText button, footer button{
+    color: black;
+    background: #3498DA;;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: 150px;
+    text-decoration: none;
+ 
+}
+main .bannerText button:hover, footer button:hover{
+    background-color: #000;
+    color: #3498DA;;
+    border-color: black;
+}
+
+.boxes .box{
+    width: 30%;
+    margin-bottom: 2%;
+    height: 300px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.boxes .images{
+    height: 250px;
+    width: 100%;
+    background-color: gray;
+    opacity: 0.7;
+}
+.boxes{
+    box-sizing: border-box;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+@media screen and (max-width: 833px) {
+    .boxes .box{
+        width: 45%;
+    }
+}
+@media screen and (max-width: 468px) {
+    .boxes .box{
+        width: 90%;
+        margin: 10px auto;
+
+    }
+
+}
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
